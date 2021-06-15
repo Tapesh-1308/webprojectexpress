@@ -27,7 +27,7 @@ const getInfo = async (event) => {
             city_name.innerText = `${arrData[0].name}, ${arrData[0].sys.country}`;
             tempRealVal.innerText = arrData[0].main.temp;
 
-            const tempMood = arrData[0].weather[0].main;
+            const tempMood = arrData[0].weather.main;
             //condition to check sunny or cloud
             if (tempMood === "Clear") {
                 tempStatus.innerHTML =
