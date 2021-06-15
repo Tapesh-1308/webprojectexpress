@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+{{>cssLink}}
+
+<body>
+    {{>navbar}}
+
+    <!-- main header start  -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <div class="col-md-12 col-12 main_header_left align-items-center">
+                        <figure>
+                            <img src="img/404.png" alt="tapesh" class="img-fluid" title="Tapesh Dua">
+                        </figure>
+                        <p>Welcome to Tapesh Website</p>
+                        <h1>{{errorMsg}}</h1>
+                        <a href="/"><button>Go Back</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main header end  -->
+
+    {{>footer}}
+
+    {{>jsLink}}
+</body>
+
+</html>

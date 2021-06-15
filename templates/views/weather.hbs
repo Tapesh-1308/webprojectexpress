@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+{{>cssLink}}
+
+<body>
+    {{>navbar}}
+
+    <!-- main header start  -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form action="" class="tempForm">
+                        <input type="text" id="cityName" placeholder="Search your City here" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+                    <div class="tempInfo">
+                        <div class="topLayer">
+                            <p id="day">Tues</p>
+                            <p id="date">13 OCT</p>
+                        </div>
+                        <div class="mainLayer ">
+                            <p id="city_name">Result Shows Here</p>
+                            <div class="middleLayer dataHide">
+                                <p id="temp"><span id="tempRealVal"> 21</span> <sup>0</sup> C</p>
+                                <p id="tempStatus"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- main header end  -->
+
+    {{>footer}}
+
+    <script src="js/main.js"></script>
+    <script>
+        const day = document.getElementById('day');
+        const date = document.getElementById('date');
+        const getCurrentDay = () => {
+
+            var weekday = new Array(7);
+            weekday[0] = "Sun";
+            weekday[1] = "Mon";
+            weekday[2] = "Tue";
+            weekday[3] = "Wed";
+            weekday[4] = "Thu";
+            weekday[5] = "Fri";
+            weekday[6] = "Sat";
+
+            let currentTime = new Date();
+            let days = weekday[currentTime.getDay()];
+            day.innerText = days;
+        };
+
+        getCurrentDay();
+
+        const getCurrentTime = () => {
+            var months = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var now = new Date();
+            var realMonth = months[now.getMonth()];
+            var realDate = now.getDate();
+            date.innerText = `${realMonth} | ${realDate}`
+
+        };
+
+        getCurrentTime();
+    </script>
+    {{>jsLink}}
+</body>
+
+</html>
